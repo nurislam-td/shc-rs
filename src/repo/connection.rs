@@ -5,12 +5,19 @@ use crate::db::{
     schema::connection,
 };
 
-pub fn create(conn: &mut SqliteConnection, name: &str, password: &Vec<u8>, host: &str) {
+pub fn create(
+    conn: &mut SqliteConnection,
+    name: &str,
+    password: &Vec<u8>,
+    host: &str,
+    username: &str,
+) {
     let new_conn = NewConnection {
         name,
         password,
         host,
         port: 22,
+        username,
     };
 
     diesel::insert_into(connection::table)

@@ -10,6 +10,7 @@ pub struct SshConnection {
     pub password: Vec<u8>,
     pub host: String,
     pub port: i32,
+    pub username: String,
 }
 
 // Структура для вставки (INSERT)
@@ -20,4 +21,5 @@ pub struct NewConnection<'a> {
     pub password: &'a Vec<u8>,
     pub host: &'a str,
     pub port: i32,
+    pub username: &'a str,
 }
