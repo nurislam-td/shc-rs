@@ -7,8 +7,9 @@ use crate::db::schema::connection;
 pub struct SshConnection {
     pub id: i32,
     pub name: String,
-    pub password: String,
+    pub password: Vec<u8>,
     pub host: String,
+    pub port: i32,
 }
 
 // Структура для вставки (INSERT)
@@ -16,6 +17,7 @@ pub struct SshConnection {
 #[diesel(table_name = connection)]
 pub struct NewConnection<'a> {
     pub name: &'a str,
-    pub password: &'a str,
+    pub password: &'a Vec<u8>,
     pub host: &'a str,
+    pub port: i32,
 }
