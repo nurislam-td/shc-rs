@@ -6,5 +6,7 @@ edition = "2024"
 [dependencies]
 aes-gcm = "0.10.3"
 argon2 = "0.5.3"
+color-eyre = "0.6.5"
 diesel = { version = "2.3.5", features = ["sqlite"] }
+ratatui = "0.30.0"
 thiserror = "2.0.18"
