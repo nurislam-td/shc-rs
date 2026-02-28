@@ -1,4 +1,5 @@
-use diesel::prelude::{Queryable, Insertable};
+use diesel::prelude::{Insertable, Queryable};
+
 use crate::db::schema::connection;
 
 // Структура для выборки (SELECT)
