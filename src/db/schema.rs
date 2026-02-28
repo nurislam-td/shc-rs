@@ -4,7 +4,8 @@ diesel::table! {
     connection (id) {
         id -> Integer,
         name -> Text,
-        password -> Text,
+        password -> Binary,
         host -> Text,
+        port -> Integer,
     }
 }
