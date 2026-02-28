@@ -1,9 +1,22 @@
-.PHONY: run export
+
+include .env
+export
+
+
+.PHONY: run migrate migration downgrade
 
 
 run:
-	DATABASE_URL=./shc.db cargo run -q
+	cargo run -q
 
 
-export:
-	. ./export.sh
+migrate:
+	diesel migration run
+
+
+# make migration m=some-name
+migration:
+	diesel migration generate $(m)
+
+downgrade:
+	diesel migration revert
