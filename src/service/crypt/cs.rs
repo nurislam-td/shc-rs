@@ -3,21 +3,8 @@ use aes_gcm::{
     Nonce,
 };
 use argon2::{password_hash::SaltString, Argon2};
-use thiserror::Error;
 
-#[derive(Error, Debug)]
-pub enum CryptoServiceError {
-    #[error("Key derivation function failed: {0}")]
-    KeyDerivationError(String),
-
-    #[error("Encoding error: {0}")]
-    EncodingError(String),
-
-    #[error("Decoding error: {0}")]
-    DecodingError(String),
-}
-
-type CryptoServiceResult<T> = Result<T, CryptoServiceError>;
+use crate::service::crypt::{errors::CryptoServiceError, types::CryptoServiceResult};
 
 fn derive_key(passphrase: &str, salt: &str) -> CryptoServiceResult<[u8; 32]> {
     let mut key = [0u8; 32];
