@@ -7,5 +7,6 @@ diesel::table! {
         password -> Binary,
         host -> Text,
         port -> Integer,
+        username -> Text,
     }
 }
