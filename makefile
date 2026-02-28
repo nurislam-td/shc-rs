@@ -3,7 +3,7 @@ include .env
 export
 
 
-.PHONY: run migrate migration downgrade
+.PHONY: run migrate migration downgrade fmt
 
 
 run:
@@ -20,3 +20,7 @@ migration:
 
 downgrade:
 	diesel migration revert
+
+
+fmt:
+	cargo fmt

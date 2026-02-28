@@ -1,8 +1,8 @@
 use aes_gcm::{
-    aead::{Aead, AeadCore, OsRng}, Aes256Gcm, KeyInit,
-    Nonce,
+    Aes256Gcm, KeyInit, Nonce,
+    aead::{Aead, AeadCore, OsRng},
 };
-use argon2::{password_hash::SaltString, Argon2};
+use argon2::{Argon2, password_hash::SaltString};
 
 use crate::service::crypt::{errors::CryptoServiceError, types::CryptoServiceResult};
 

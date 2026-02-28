@@ -1,4 +1,4 @@
-use diesel::{sqlite::SqliteConnection, Connection};
+use diesel::{Connection, sqlite::SqliteConnection};
 
 mod db;
 mod repo;
