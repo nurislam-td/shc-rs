@@ -2,7 +2,7 @@ use diesel::prelude::{Insertable, Queryable};
 
 use crate::db::schema::connection;
 
-// Структура для выборки (SELECT)
+
 #[derive(Queryable, Debug)]
 pub struct SshConnection {
     pub id: i32,
@@ -13,7 +13,7 @@ pub struct SshConnection {
     pub username: String,
 }
 
-// Структура для вставки (INSERT)
+
 #[derive(Insertable)]
 #[diesel(table_name = connection)]
 pub struct NewConnection<'a> {
